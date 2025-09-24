@@ -1,0 +1,264 @@
+1.
+
+print("Enter two numbers")
+a=int(input())
+b=int(input())
+print("addition of %d and %d is %d"%(a,b,a+b))
+
+
+---------------------
+2. 
+weekday = int(input("Enter weekday day number (1-7) : "))
+
+if weekday == 1 :
+    print("\nMonday");
+
+elif weekday == 2 :
+    print("\nTuesday")
+
+elif(weekday == 3) :
+    print("\nWednesday")
+
+elif(weekday == 4) :
+    print("\nThursday")
+
+elif(weekday == 5) :
+    print("\nFriday")
+
+elif(weekday == 6) :
+    print("\nSaturday")
+
+elif (weekday == 7) :
+    print("\nSunday")
+
+else :
+    print("\nPlease enter weekday number between 1-7.")
+	
+	
+-----------------------------
+3.
+import math
+a=float(input("Enter a number : "))
+print("square root of ",a,"is",math.sqrt(a))
+
+-----------------------------
+4.
+l=float(input("enter length: "))
+b=float(input("enter breadth: "))
+a=float(l*b)
+print("Area : ",a)
+
+
+------------------------------
+5.
+x=float(input("Enter side length: "))
+area=float(x**2)
+perimeter=float(4*x)
+print("Area=",area,"\nPerimeter=",perimeter)
+-------------------------------
+6.
+import math
+r=float(input("Enter radius:"))
+h=float(input("Enter height:"))
+vol=math.pi * r**2 * h
+area=(2*math.pi * r * h) + (2*math.pi * r**2)
+print("Volume: ",vol,"\nArea: ",area)
+
+
+-----------------------------
+7.
+def swap(a,b):
+    t=a
+    a=b
+    b=t
+    print("swapped values are a=",a,"and b=",b)
+
+a=int(input("Enter a:"))
+b=int(input("Enter b:"))
+swap(a,b)
+
+-----------------------------
+8.
+import math
+
+a=int(input("Enter a number: "))
+if(a<=0):
+    print("it is neither even nor odd")
+else:
+    if(a%2==0):
+        print(a,"is even")
+    else:
+        print(a,"is odd")
+
+
+-----------------------------
+9.
+print("Enter three numbers:")
+a,b,c=int(input()),int(input()),int(input())
+
+if(a>=b and a>=c):
+    print(a,"is the greatest of all")
+elif(b>=a and b>=c):
+    print(b,"is greatest of all")
+else:
+    print(c,"is greatest of all")
+
+    
+------------------------------
+10.
+import calendar
+x=int(input("Enter year:"))
+if(calendar.isleap(x)==True):
+    print(x,"is a leap year")
+else:
+    print(x,"is not a leap year")
+-------------------------------
+11.
+
+a=int(input("Enter a number: "))
+if a==0:
+    print("It is 0")
+elif a>0:
+    print("It is positive")
+else:
+    print("It is negative")
+    
+------------------------------
+12.
+print("---Enter marks---")
+a,b,c,d,e=float(input()),float(input()),float(input()),float(input()),float(input())
+avg=(a+b+c+d+e)/5
+print("Average:",avg)
+if(avg>=90.0):
+    print("Grade A")
+elif(avg>=80 and avg<90):
+    print("Grade B")
+elif(avg>=70 and avg<80):
+    print("Grade C")
+elif(avg>=60 and avg<70):
+    print("Grade D")
+elif(avg>=50 and avg<60):
+    print("Grade E")
+else:
+    print("Grade F")
+
+--------------------------------
+13.
+#a
+print("--pattern 1--")
+for i in range(5):
+    for j in range(i):
+        print("*",end="")
+    print()
+
+#b
+print("--pattern 2--")
+for i in range(1,6,2):
+    for j in range(i):
+        print("*",end="")
+    print()
+i-=1
+while i > 0:
+    if i%2!=0:
+        for j in reversed(range(i)):
+            print("*",end="")
+        print()
+    i-=1
+
+------------------------------
+14.
+i=1
+while i<=100:
+    if(i%2==0):
+        print(i,end=" ")
+    i+=1
+
+
+----------------------------    
+15.
+sum=0
+for i in range(11):
+    sum+=i
+print(sum)
+
+
+---------------------------
+16.
+n1,n2,cnt=0,1,0
+n=int(input("Enter how many terms: "))
+if n<=0:
+    print("--")
+if n==1:
+    print(n1)
+if n>=2:
+    while cnt<n:
+        print(n1)
+        seq=n1+n2
+        n1=n2
+        n2=seq
+        cnt+=1
+
+--------------------------
+17.
+n=int(input("Enter a number: "))
+ans=1
+for i in range(1,n+1):
+    ans=ans*i
+print("Factorial is : ",ans)
+
+-------------------------
+18.
+n=int(input("Enter a number: "))
+ans=0
+while n>0:
+    d=n%10
+    ans+=d
+    n//=10
+print("sum of digots is",int(ans))
+
+
+---------------------------
+19.
+num = int(input("Enter a number:"))
+rev = 0
+
+while num != 0:
+    d = num % 10
+    rev = rev * 10 + d
+    num //= 10
+
+print("Reversed Number: " + str(rev))
+
+-----------------------------
+20.
+num=int(input("Enter a number:"))
+temp=num
+rev=0
+while(num>0):
+    dig=num%10
+    rev=rev*10+dig
+    num=num//10
+if(temp==rev):
+    print("The number is palindrome!")
+else:
+    print("Not a palindrome!")
+	
+	
+--------------------------------
+21.
+
+ 
+n = int(input("Enter any number: "))
+sum1 = 0
+for i in range(1, n):
+    if(n % i == 0):
+        sum1 = sum1 + i
+if (sum1 == n):
+    print("The number is a Perfect number!")
+else:
+    print("The number is not a Perfect number!")
+
+
+	
+
+	
