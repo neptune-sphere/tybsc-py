@@ -1,0 +1,560 @@
+
+
+1) Write a python program to accept the strings which contains all vowels
+
+input:
+
+flag=0
+
+mystr=input('Enter a string: ')
+mystr=mystr.lower()
+
+vowels={'a':mystr.count('a'),'e':mystr.count('e'),'i':mystr.count('i'),'o':mystr.count('o'),'u':mystr.count('u')}
+print(vowels)
+
+countvalues=vowels.values()
+print(countvalues)
+
+for i in countvalues:
+    if i == 0:
+        flag=1
+        break
+
+if flag==1:
+    print('Unacceptable')
+else:
+    print('Understabdable, have a nice day')
+
+
+output:
+
+Enter a string: hrishikesh kalidas wavhal  12342244 ]'\\'\'\[;
+{'a': 4, 'e': 1, 'i': 3, 'o': 0, 'u': 0}
+dict_values([4, 1, 3, 0, 0])
+Unacceptable
+
+Enter a string: permutation
+{'a': 1, 'e': 1, 'i': 1, 'o': 1, 'u': 1}
+dict_values([1, 1, 1, 1, 1])
+Understabdable, have a nice day
+
+-----------------------------------------
+
+2) Write a python program to find maximum frequency character in string
+
+input:
+
+mystr=input('Enter a string: ')
+
+freq={ch:mystr.count(ch) for ch in mystr}
+print(freq)
+
+
+# max=0
+# val=freq.values()
+# for i in val:
+#     if i > max:
+#         max=i
+
+# print(max)
+
+val = max(freq,key=freq.get)
+print(val)
+
+
+# for ch in mystr:
+#     if ch not in freq:
+#         freq[ch]=1
+#     else:
+#         freq[ch]+=1
+
+
+    
+
+
+
+output:
+Enter a string: hrishikesh
+{'h': 3, 'r': 1, 'i': 2, 's': 2, 'k': 1, 'e': 1, ' ': 1}
+h
+
+-----------------------------------------
+
+3) Write a Python program to remove multiple empty spaces from string
+
+input:
+
+mystr=input('Enter a string: ')
+mystr=mystr.replace(" ","")
+print(mystr)
+    
+output:
+Enter a string:     hrishikesh asabjhvs     a hfujsah hnr h ou eh
+hrishikeshasabjhvsahfujsahhnrhoueh
+
+-----------------------------------------
+
+4) Write a Python program to find words with both alphabets and numbers
+
+input:
+mystr=input('Enter a string :')
+mylist=mystr.split(' ')
+print(mylist)
+
+l2=[]
+for i in mylist:
+    if any(chr.isalpha() for chr in i) and any(chr.isdigit() for chr in i):
+        l2.append(i)
+
+print(l2)
+
+output:
+
+Enter a string :hrishikesh neptune-sphere kman6969
+['hrishikesh', 'neptune-sphere', 'kman6969']
+['kman6969']
+
+-----------------------------------------
+
+5) Write a Python program to removal all characters from a string except integers
+
+input:
+
+mystr=input('Enter a string: ')
+dig=''
+for i in mystr:
+    if i.isdigit():
+        dig+=i
+print(dig)
+
+output:
+
+Enter a string: hrishikesh695341210kman741//*/-/30498723][\;'
+69534121074130498723
+
+-----------------------------------------
+
+6) Write a Python program to remove special symbols / punctuation from a string
+
+mystr=input('Enter a string: ')
+str2=''
+for i in mystr:
+    if i.isalnum():
+        str2+=i
+print(str2)
+
+
+output:
+Enter a string: .sfdfk;']\'\]'8309_+)_)kmansdi
+sfdfk8309kmansdi
+
+-----------------------------------------
+
+7) Write a program to count the numbers of characters in the string and store them in a dictionary data structure
+
+input:
+
+mystr=input('Enter a string:')
+mydic={ch:mystr.count(ch) for ch in mystr}
+print(mydic)
+
+
+
+
+output:
+Enter a string:hrishikesh kalidas wavhal
+{'h': 4, 'r': 1, 'i': 3, 's': 3, 'k': 2, 'e': 1, ' ': 2, 'a': 4, 'l': 2, 'd': 1, 'w': 1, 'v': 1}
+
+
+-----------------------------------------
+
+8) Write a python program to write functions for the following options
+
+
+a) String Length
+
+b) String Reverse
+
+c) String Concatenation
+
+d) String Comparison
+
+input:
+
+def mystrlen(mystr):
+    cnt=0
+    for i in mystr:
+        cnt+=1
+    print('Length is :',cnt)
+
+
+def myrev(mystr):
+    mystr1="".join(reversed(mystr))
+    print(mystr1)
+
+def myconcat(mystr):
+    mystr2=input('Enter a string:')
+    mystr3=mystr+mystr2
+    print(mystr3)
+
+def strcomp(mystr):
+    mystr2=input('Enter second string:')
+    if mystr>mystr2:
+        print(mystr,"is greater")
+    elif mystr==mystr2:
+        print('Both strings are equal')
+    elif mystr2>mystr:
+        print(mystr2,'is greater')
+
+mystr=input('Enter first string:')
+print('---Length of the string---')
+mystrlen(mystr)
+print('---Reversing a string---')
+myrev(mystr)
+print('---concatenate a string---')
+myconcat(mystr)
+print('---compare two strings---')
+strcomp(mystr)
+    
+
+
+output:
+
+Enter first string:hrishikesh wavhal
+---Length of the string---
+Length is : 17
+---Reversing a string---
+lahvaw hsekihsirh
+---concatenate a string---
+Enter a string:neptune-sphere
+hrishikesh wavhalneptune-sphere
+---compare two strings---
+Enter second string:hrishikesh
+hrishikesh wavhal is greater
+
+
+
+-----------------------------------------
+
+9) Write a python program to create a list, find largest of n numbers of a List. Write
+
+input:
+
+function to find largest number.
+def largest(mylist):
+    max=0
+    for i in mylist:
+        if(i>max):
+            max=i
+    return max
+
+
+
+n=int(input('Enter number of elements : '))
+mylist=[int(input('Enter element: ')) for i in range(0,n)]
+
+print(mylist)
+
+print('largest element is : ',largest(mylist))
+
+
+
+
+# mylist=[]
+# for i in range(0,n):
+#     x=int(input('Enter Element : '))
+#     mylist.append(x)
+
+
+output:
+Enter number of elements : 5
+Enter element: 69
+Enter element: -96
+Enter element: 120
+Enter element: -6000
+Enter element: 450
+[69, -96, 120, -6000, 450]
+largest element is :  450
+-----------------------------------------
+
+10) Write a python program to double a given number and add two numbers using
+
+lambda()
+
+input:
+
+x=int(input('Enter a number: '))
+lam1=lambda x : print(x+x)
+lam1(x)
+
+y=int(input('Enter first number'))
+z=int(input('Enter first number'))
+lam2=lambda y,z : print('addition is :',y+z)
+lam2(y,z)
+
+
+
+output:
+
+Enter a number: 8
+16
+Enter first number65
+Enter first number5
+addition is : 70
+
+-----------------------------------------
+
+
+11) Write a python program to combine two lists into a dictionary.
+
+Input:
+
+t1=["name","clg","age"]
+
+t2=["abc","spc",34]
+
+Expected output:
+
+{'name': 'abc', 'clg': spc, 'age': 34}
+
+input:
+
+t1=["name","clg","age"]
+t2=["abc","spc",34]
+
+mydic={t1[i]:t2[i] for i in range(0,len(t1))}
+print(mydic)
+
+output:
+{'name': 'abc', 'clg': 'spc', 'age': 34}
+
+-----------------------------------------
+
+12) Write a python program to find mean, median, mode for the given set of numbers in a list.
+
+input:
+
+import statistics as stats
+
+mylist=[2,54,3,435,35,43,13,54,3584,35,35,435,5,00]
+x=stats.mean(mylist)
+y=stats.median(mylist)
+z=stats.mode(mylist)
+
+print('means is :',x,'median is :',y,'mode is :',z)
+
+
+output:
+means is : 338.07142857142856 median is : 35.0 mode is : 35
+
+-----------------------------------------
+
+13) With a python program to accept a number ‘n’, generate a dictionary that contains (i,
+
+i*i) such that is a number between 1 and n (both included) and then the program
+
+should print the dictionary.
+
+Input:
+
+8
+
+Expected output:
+
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64}
+
+input:
+n=int(input('Enter n:'))
+mydic={i:i*i for i in range(1,n+1)}
+print(mydic)
+
+output:
+Enter n:5
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+-----------------------------------------
+
+14) Write a python program that accepts a comma separated sequence of words as input
+
+and prints the words in a comma-separated sequence after sorting them alphabetically.
+
+Input:
+
+without, hello, bag, world
+
+Expected output:
+
+bag, hello, without, world
+
+input:
+
+mystr=input('Enter string separated by comma: ')
+mylist=mystr.split(',')
+mylist.sort()
+print(mylist)
+
+output:
+Enter string separated by comma: neptune-sphere,Hrishikesh,Swastika,kman
+['Hrishikesh', 'Swastika', 'kman', 'neptune-sphere']
+
+
+-----------------------------------------
+
+15) Write a program that accepts a sentence and calculate the number of letters and digits.
+
+Input:
+
+hello world! 123
+
+Expected output:
+
+LETTERS 10
+
+DIGITS 3
+
+input:
+
+mystr=input('Enter a string: ')
+lcnt=0
+ncnt=0
+for i in mystr:
+    if i.isalpha():
+        lcnt+=1
+    if i.isdigit():
+        ncnt+=1
+print("letters: ",lcnt,"\nNumbers: ",ncnt)
+
+output:
+
+Enter a string: i am learning python and it is great
+letters:  29
+Numbers:  0
+
+-----------------------------------------
+
+
+16) Write a python program which can filter even numbers in a list by using filter
+
+function. The list is: [1,2,3,4,5,6,7,8,9,10].
+
+input:
+def even(mylist):
+    return mylist%2==0
+    
+mylist=[1,2,3,4,5,6,7,8,9,10]
+x=list(filter(even,mylist))
+print(x)
+
+output:
+[2, 4, 6, 8, 10]
+-----------------------------------------
+
+17) Write a python program to calculate a square of all elements of a list. Use map()
+
+function
+
+input:
+def squares(x):
+    return x*x
+
+l1=[i for i in range(1,10+1)]
+l2=list(map(squares,l1))
+print("",l2)
+
+output:
+ [ 1, 4, 9, 16, 25, 36, 49, 64, 81,100]
+
+-----------------------------------------
+
+18) Write a python program to print the first half values in one line and the last half
+
+values in one line with a given tuple (1,2,3,4,5,6,7,8,9,10).
+
+1input:
+mytup=(1,2,3,4,5,6,7,8,9,10)
+
+for i in range (1,int(len(mytup)/2)+1):
+    print(i,end=' ')
+
+print()
+
+i+=1
+for j in range(i,int(len(mytup))+1):
+    print(j,end=' ')
+
+output:
+1 2 3 4 5
+6 7 8 9 10
+
+-----------------------------------------
+
+19) Write a program to compute the number of characters, words and lines in a file.
+
+-----Contents of file-----
+hrishiikesh kalidas wavhal
+Akash Somwanshi
+Bhooshan Birje
+
+
+
+input:
+
+file = open("lorem.txt", "r")
+
+nline = 0
+nwords = 0
+nchar = 0
+
+for line in file:
+  line = line.strip("\n")
+  words = line.split(' ')
+  nline += 1
+  nwords += len(words)
+  nchar += len(line)
+file.close()
+
+print('Characters',nchar)
+print('words',nwords)
+print('lines',nline)
+
+output:
+
+Characters 55
+words 7
+lines 3
+
+-----------------------------------------
+
+20)Consider the following tuple and write the code for the following statements :
+
+T1 = (12, 3, 45, ‘Hockey’, ‘Computer, (‘a’, ‘b’), [25, 50])
+
+a) Display the first element of ‘T1’
+
+b) Display the last element of ‘T1’
+
+c) Display ‘T1’ in reverse order.
+
+d) Display ‘Anil’ from tuple ‘T1’
+
+e) Display ‘b’ from tuple ‘T1’
+
+f) Display ‘50’ from tuple ‘T1’
+
+input:
+t1=(12,3,45,'Hockey','Computer',('a','b'),[25,50])
+print("a) First Element: ",t1[0])
+print("b) Last Element: ",t1[-1])
+print("c) Reverse order: ",t1[::-1])
+# print("d) Display Anil: ",t1.index('Anil'))
+print("e) Display \'b\' from the tuple: ",t1[5][1])
+print("f) Display 50 from t1: ",t1[6][1])
+
+
+output:
+
+a) First Element:  12
+b) Last Element:  [25, 50]
+c) Reverse order:  ([25, 50], ('a', 'b'), 'Computer', 'Hockey', 45, 3, 12)
+e) Display 'b' from the tuple:  b
+f) Display 50 from t1:  50

@@ -1,0 +1,7 @@
+t1=(12,3,45,'Hockey','Computer',('a','b'),[25,50])
+print("a) First Element: ",t1[0])
+print("b) Last Element: ",t1[-1])
+print("c) Reverse order: ",t1[::-1])
+# print("d) Display Anil: ",t1.index('Anil'))
+print("e) Display \'b\' from the tuple: ",t1[5][1])
+print("f) Display 50 from t1: ",t1[6][1])
