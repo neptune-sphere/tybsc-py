@@ -1,0 +1,209 @@
+1. 	Write a program to find all the duplicates
+
+l1=[]
+
+def duplicates(l1):
+    mylist=[]
+    for i in l1:
+        if l1.count(i)>1:
+            mylist.append(i)
+    print("Duplicates are : ",set(mylist))
+
+def accept(l1):
+    n=int(input("Enter number of elemets: "))
+    for i in range(n):
+        x=input("Enter element: ")
+        l1.append(x)
+
+
+accept(l1)
+print("entered list is : ", l1)
+duplicates(l1)
+
+
+
+output:
+Enter number of elemets: 5
+Enter element: 12
+Enter element: 11
+Enter element: 11
+Enter element: 15
+Enter element: 12
+entered list is :  ['12', '11', '11', '15', '12']
+Duplicates are :  {'11', '12'}
+
+
+
+--------------------------------
+2. Write a function to find the maximum of n integers
+
+l1=[]
+
+
+def max(l1):
+    max=0
+    for i in l1:
+        if i > max:
+            max=i
+    print("maximum is : ",max)
+    
+
+def accept():
+    global l1
+    n=int(input("Enter number of integers: "))
+    for i in range(n):
+        x=int(input("Enter a number: "))    
+        l1.append(x)
+
+
+accept()
+max(l1)
+
+
+output:
+
+Enter number of integers: 5
+Enter a number: 12
+Enter a number: 14
+Enter a number: 65
+Enter a number: 22
+Enter a number: 12
+maximum is :  65
+
+--------------------------------
+3. Write a function to find all the unique elements of the list
+
+l1=[]
+l2=[]
+
+
+def accept():
+    n=int(input("Enter number of elements: "))
+    for i in range(n):
+       x=input("Enter element: ") 
+       l1.append(x)
+
+def unique():
+    for i in l1:
+        if l1.count(i)==1:
+            l2.append(i)   
+
+accept()
+unique()
+
+print(l2)
+
+output:
+Enter number of elements: 5
+Enter element: 11
+Enter element: 12
+Enter element: 12
+Enter element: 15
+Enter element: 11
+['15']
+
+--------------------------------
+4. 
+Write a python function to generate a dictionary where the keys are numbers between 1 and ‘n’ (both included) and the values are square of keys. The function should just print the values only. Accept ‘n’ from user
+
+
+d1={}
+
+def accept():
+    global d1
+    n=int(input("Enter n:   "))
+    for i in range(1,n+1):
+        d1[i]=i*i
+
+    val=d1.values()
+    print(val)
+
+accept()
+
+
+output:
+
+Enter n:   5
+dict_values([1, 4, 9, 16, 25])
+--------------------------------
+5. Write a python program to get python version
+
+import sys
+print("current version: ",sys.version_info)
+
+output: 
+
+current version:  sys.version_info(major=3, minor=8, micro=5, releaselevel='final', serial=0)
+
+--------------------------------
+6) Write a python program to print date, time for today and now using function
+import datetime
+
+now = datetime.datetime.now()
+current_date = now.date()
+print('Date:', current_date)
+
+mytime=now.time()
+print("Time : ",mytime)
+
+
+output:
+Date: 2022-01-13
+Time :  22:52:32.704096
+
+--------------------------------
+7) Write a python function to find the roots of quadratic equation ax2 + bx + c = 0
+import cmath  
+a = float(input('Enter a: '))  
+b = float(input('Enter b: '))  
+c = float(input('Enter c: '))  
+  
+# calculate the discriminant  
+d = (b**2) - (4*a*c)  
+  
+# find two solutions  
+sol1 = (-b-cmath.sqrt(d))/(2*a)  
+sol2 = (-b+cmath.sqrt(d))/(2*a)  
+print('The solution are {0} and {1}'.format(sol1,sol2))  
+
+output:
+
+Enter a: 25
+Enter b: 65
+Enter c: 12
+The solution are (-2.4+0j) and (-0.2+0j)
+
+
+
+--------------------------------
+8) Write a Python script to print the current date in following format “Sun May 29 02:26:23 IST 2017”
+import datetime
+
+print(datetime.datetime.now().strftime("%c"))
+
+output:
+Thu Jan 13 22:53:02 2022
+
+--------------------------------
+9) Write a Python function to check whether a number is perfect or not.
+n = int(input("Enter a number: "))
+
+def perfect(): 
+    sum1 = 0
+    for i in range(1, n):
+        if(n % i == 0):
+            sum1 = sum1 + i
+    if (sum1 == n):
+        print("The number is a Perfect number!")
+    else:
+        print("The number is not a Perfect number!")
+
+perfect()
+
+output:
+
+Enter a number: 12
+The number is not a Perfect number!
+
+Enter a number: 6
+The number is a Perfect number!
